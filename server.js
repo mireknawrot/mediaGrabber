@@ -45,6 +45,18 @@ router.get('/hello/:name', function(req, res) {
     res.send('hello ' + req.params.name + '!');
 });
 
+// show the form (GET http://localhost:8080/login)
+router.get('/login',function(req, res) {
+        res.send('this is the login form');
+        //res.sendFile(__dirname+'/index.html');
+});
+
+// process the form (POST http://localhost:8080/login)
+router.post('/login',function(req, res) {
+    console.log('processing');
+    res.send('processing the login form!');
+});
+
 app.use('/api',router);
 
 // START THE SERVER
